@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 // import { configureStore, combineReducers } from '@reduxjs/toolkit'
 //import { user } from './reducers/user'
 
-const SIGNUP_URL ='http://localhost:8080/users'
+const SIGNUP_URL ='http://localhost:8080/signup'
 
 
 
@@ -22,13 +22,14 @@ export const Signup = () => {
       body: JSON.stringify({name, mail, password}),
       headers: { 'Content-Type': 'application/json' }
     })
+  
     .then(res => res.json())
     .then(() => {
-      setName('')
-      setMail('')
-      setPassword('')
-    })
+       setName('')
+       setMail('')
+       setPassword('')
     .catch(err => console.log("error:", err))
+     })
   }
   
   return (

@@ -8,7 +8,7 @@ export const App = () => {
   return (
   <BrowserRouter>
   <Switch>
-    <Route path="/users" exact>
+    <Route path="/signup" exact>
       <Signup />
     {/* </Route>
     <Route path="/sessions" exact>
