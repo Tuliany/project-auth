@@ -67,7 +67,7 @@ app.get('/secrets', (req,res) =>{
 })
 
 //Registration (creates the user)
-app.post('/users', async (req,res)=>{
+app.post('/signup', async (req,res)=>{
   try{
     const {name, email, password} = req.body
     const user = new User({name, email, password: bcrypt.hashSync(password)})
@@ -75,20 +75,22 @@ app.post('/users', async (req,res)=>{
     res.status(201).json({id: user._id, accessToken: user.accessToken})
   } catch (err){
     res.status(400).json({message: 'could not create user', errors: err.erros})
-
   }
 })
 
 //Login (finds the user)
-app.post('/sessions', async (req, res) => {
-  const user = await User.findOne({email: req.body.email})
-  if (user && bcrypt.compareSync(req.body.password, user.password)) {
-  //Sucess
-  res.json({userId: user._id, accessToken: user.acessToken})
+app.post('/login', async (req, res) => {
+try {
+  const { name, password } = req.body
+  const user = await User.findOne({ name })
+  if (user && bcrypt.compareSync(password, user.password)) {
+    res.status(201).json({ userId: user._id, accessToken: user.accessToken})
   } else {
-  //Fail
-  res.json({notFound: true})
+    res.status(404).json({ notFound: true })
   }
+} catch (err) {
+  res.status(404).json({ notFound: true })
+}
 })
 
 // Start the server

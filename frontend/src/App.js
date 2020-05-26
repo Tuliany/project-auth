@@ -1,24 +1,37 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Provider } from "react-redux";
+
+ import { user } from './reducers/user.js'
+ import { configureStore, combineReducers } from "@reduxjs/toolkit";
+
+
 import { Signup } from 'components/Signup'
-import { Profile } from 'components/Profile'
+import { Login } from 'components/Login'
 import { Secrets } from 'components/Secrets'
+
+ 
+const reducer = combineReducers({ user: user.reducer })
+
+const store = configureStore({ reducer })
 
 export const App = () => {
   return (
+    <Provider store={store}>
   <BrowserRouter>
   <Switch>
     <Route path="/signup" exact>
       <Signup />
-    {/* </Route>
-    <Route path="/sessions" exact>
-    <Profile />
+    </Route>
+    <Route path="/login" exact>
+    <Login />
     </Route>
     <Route path="/secrets" exact>
-      <Secrets /> */}
+      <Secrets />
     </Route>
   </Switch>
   </BrowserRouter>
+  </Provider>
   
   )
 }
