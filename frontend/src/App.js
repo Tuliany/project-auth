@@ -18,28 +18,23 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-  <BrowserRouter>
-  <Switch>
-  <Route path="/" exact>
-    {/* <h1>Welcome</h1> */}
-      <Home />
-    </Route>
-    <Route path="/signup" exact>
-    <h1>SIGN UP</h1>
-      <Signup />
-    </Route>
-
-    <Route path="/login" exact>
-    <h1>LOG IN</h1>
-    <Login />
-    </Route>
-    <Route path="/secrets" exact>
-    <h1>Sshh</h1>
-      <Secrets />
-    </Route>
-  </Switch>
-  </BrowserRouter>
-  </Provider>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact>
+           <Home />
+          </Route>
+          <Route path="/signup" exact>
+            <Signup />
+          </Route>
+          <Route path="/login" exact>
+            <Login />
+          </Route>
+          <Route path="/secrets" exact>
+            <Secrets />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </Provider>
   
   )
 }

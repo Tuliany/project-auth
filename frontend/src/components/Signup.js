@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
+import '../Style/Signup.css'
 
 const SIGNUP_URL ='http://localhost:8080/signup'
 
@@ -36,21 +37,23 @@ export const Signup = () => {
   return (
     <div>
     <form>
-    <label> Name:
-      <input type="text" required 
+    <div class="question">
+    <label> SIGN UP!</label>
+      <input type="text" placeholder="Name"required 
         value={name} onChange={event => setName(event.target.value)}/>
-    </label>
-
-    <label> Email:
-      <input type="email" required 
+    
+    </div>
+    <div class="question">
+   
+      <input type="email" placeholder="Email"required 
         value={mail} onChange={event => setMail(event.target.value)}/>
-    </label>
 
-    <label> Password:
-      <input type="password" required 
+    </div>
+    <div class="question">
+    
+      <input type="password" placeholder="Password"required 
         value={password} onChange={event => setPassword(event.target.value)}/>
-    </label>
-
+    </div>
     <button type="submit" onClick={handleSignup}>
       Submit
     </button>

@@ -3,6 +3,7 @@ import { Secrets } from './Secrets'
 import { useDispatch, useSelector } from 'react-redux'
 import { user } from '../reducers/user'
 import { useHistory } from 'react-router-dom';
+import '../Style/Login.css'
 
 
 const LOGIN_URL = "http://localhost:8080/login"
@@ -53,15 +54,11 @@ export const Login = () => {
     <div>
       <form>
         <h2>LOGIN</h2>
-          <label> Name:
-            <input type="text" required 
+          
+            <input type="text" placeholder="Name"required 
             value={name} onChange={event => setName(event.target.value)}/>
-          </label>
-
-          <label> Password:
-            <input type="password" required 
+            <input type="password" placeholder="Password"required 
             value={password} onChange={event => setPassword(event.target.value)}/>
-          </label>
           <button type="Login" onClick={handleLogin}>
             Login
           </button>
