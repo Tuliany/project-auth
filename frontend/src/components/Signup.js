@@ -1,20 +1,18 @@
 import React, { useState } from 'react'
-//import Login from 'components/Login'
-//import { Provider } from 'react-redux'
-// import { configureStore, combineReducers } from '@reduxjs/toolkit'
-//import { user } from './reducers/user'
+import { useHistory } from 'react-router-dom';
 
 const SIGNUP_URL ='http://localhost:8080/signup'
 
-
-
 export const Signup = () => {
+  const history = useHistory ()
   const [name, setName] = useState('')
   const [mail, setMail] = useState('')
   const [password, setPassword] = useState('')
 
   const handleSignup = event => {
     event.preventDefault()
+    history.push('/secrets')
+
 
     fetch(`${SIGNUP_URL}`,
     {
@@ -56,6 +54,7 @@ export const Signup = () => {
     <button type="submit" onClick={handleSignup}>
       Submit
     </button>
+    <button type ="Home" onClick={() => history.push('/')}> Home </button> 
   </form>
   </div>
   )

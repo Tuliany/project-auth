@@ -65,6 +65,8 @@ export const Login = () => {
           <button type="Login" onClick={handleLogin}>
             Login
           </button>
+          <button type ="Home" onClick={() => history.push('/')}> Home </button>  
+
       </form>
     </div>
   
