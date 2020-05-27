@@ -52,8 +52,8 @@ export const Login = () => {
  if (!accessToken) {
   return (
     <div>
-      <form>
-        <h2>LOGIN</h2>
+      <form className="Login">
+        <h2>LOG IN</h2>
           
             <input type="text" placeholder="Name"required 
             value={name} onChange={event => setName(event.target.value)}/>

@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 
 body{
-  background-image: url("cover.jpg");
+  background-image: url("test7.jpg");
   background-repeat: no-repeat;
   background-size: cover;
  
@@ -18,9 +19,10 @@ body{
 } */
 
 h1{
- font-family: 'Raleway';
+font-family: 'Sacramento', cursive;
+font-weight:bold; 
  font-size: 60px;
- color: black;
+ color: white;
  /* text-align: center; */
  position: relative;
  animation: mymove 5s infinite;
@@ -30,8 +32,22 @@ h1{
   from {left: 0px;}
   to {left: 30%;}
 }
- form{
+ .Home {
    text-align: center;
+   position: relative;
+  display: inline-block;
+  max-width: 700px;
+  min-width: 500px;
+  box-sizing: border-box;
+  padding: 30px 25px;
+  /* background-color: white; */
+  border-radius: 40px;
+  margin: 40px 0;
+  left: 50%;
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
  }
 button{
   -webkit-appearance: none; 

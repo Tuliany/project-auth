@@ -36,7 +36,7 @@ export const Signup = () => {
   
   return (
     <div>
-    <form>
+    <form className="Signup">
     <div class="question">
     <label> SIGN UP!</label>
       <input type="text" placeholder="Name"required 

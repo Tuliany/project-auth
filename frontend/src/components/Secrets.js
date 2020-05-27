@@ -8,8 +8,8 @@ export const Secrets = () => {
   const history = useHistory()
   return (
     <div className="secrets">
-     <button type ="Home" onClick={() => history.push('/')}> Home </button>
-     <h7>THANK YOU AWESOME TEAM 🦒</h7>
+     <button type ="Home" onClick={() => history.push('/')}> LOG OUT </button>
+     <h7>You Are Magic 🦒</h7>
     </div>
   )
 }
