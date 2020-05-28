@@ -11,7 +11,7 @@ export const Signup = () => {
   const dispatch = useDispatch()
   const accessToken = useSelector((store) => store.user.login.accessToken)
   const [name, setName] = useState('')
-  const [mail, setMail] = useState('')
+  const [email, setEmail] = useState('')  
   const [password, setPassword] = useState('')
 
   const handleSignup = event => {
@@ -22,7 +22,7 @@ export const Signup = () => {
     fetch(`${SIGNUP_URL}`,
     {
       method: 'POST',
-      body: JSON.stringify({name, mail, password}),
+      body: JSON.stringify({name, email, password}),
       headers: { 'Content-Type': 'application/json' }
     })
     .then((res) => {
@@ -57,7 +57,7 @@ export const Signup = () => {
     <div class="question">
    
       <input type="email" placeholder="Email"required 
-        value={mail} onChange={event => setMail(event.target.value)}/>
+        value={email} onChange={event => setEmail(event.target.value)}/>
 
     </div>
     <div class="question">

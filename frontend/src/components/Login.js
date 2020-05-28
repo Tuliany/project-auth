@@ -1,14 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { Secrets } from './Secrets'
 import { useDispatch, useSelector } from 'react-redux'
 import { user, log } from '../reducers/user'
 import { useHistory } from 'react-router-dom';
 import '../Style/Login.css'
-
-
-// const LOGIN_URL = "http://localhost:8080/login"
-
-
 
 export const Login = () => {
    const history = useHistory()
@@ -19,39 +13,9 @@ export const Login = () => {
    const [name, setName] = useState("")
    const [ password, setPassword] = useState("")
    
-
-  //  const handleLoginSuccess = (loginResponse) => {
-  //    //DEBBUGING
-  //    const statusMessage = JSON.stringify(loginResponse)
-  //    dispatch(user.actions.setStatusMessage({ statusMessage }))
-  //   // SAVE LOGIN
-  //     dispatch(user.actions.setAccessToken({ accessToken: loginResponse.accessToken}))
-  //     dispatch (user.actions.setUserId({ userId: loginResponse.userId}))
-  //     history.push('/secrets')
-  // }
-
-  // const handleLoginFailed = (loginError) => {
-  //   const statusMessage = JSON.stringify(loginError)
-  //     dispatch(user.actions.setStatusMessage({ statusMessage }))
-
-  //   //CLEAR LOGIN
-  //     dispatch(user.actions.logout)
-  // }
-
    const handleLogin = (event) => {
      event.preventDefault()
      dispatch(log(name, password))
-    //  history.push('/secrets')
-
-  //  fetch(LOGIN_URL, {
-  //    method: 'POST',
-  //    body: JSON.stringify({ name, password }),
-  //    headers: { 'Content-Type': 'application/json'}
-  //  })
-
-  //   .then((res) => res.json())
-  //   .then((json) =>  handleLoginSuccess(json))
-  //   .catch((err) =>  handleLoginFailed (err))
   }
 useEffect (() => {
   if (accessToken) {
