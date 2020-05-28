@@ -17,7 +17,7 @@ export const Secrets = () => {
     <div className="secrets">
     {/* <button type ="Home" onClick={() => dispatch(logout())}> LOG OUT </button> */}
 
-     <button type ="Home" onClick={() => history.push('/')}> LOG OUT </button>
+     <button type ="Home" onClick={(e) => dispatch(logout())}> LOG OUT </button>
      {/* {errorMessage && <h4>Error Message : {`${errorMessage}`}</h4>} */}
       {secretMessage && <h4>Secret Message : {`${secretMessage}`}</h4>}
       <h4>userId :</h4>

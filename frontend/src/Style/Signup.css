@@ -152,3 +152,25 @@ input[type="password"]:valid ~ label {
   -webkit-transform: translate(5px, -35px) scale(0.6);
   transform: translate(5px, -35px) scale(0.6);
 }
+/* p{
+  font-size: 40px;
+} */
+@keyframes blink { 50% { 
+  color: white;
+}  }
+h2{
+  border-radius: 15px;
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  min-width: 450px;
+  text-align:center ;
+  font: bold 1.5em/2em monospace ;
+  color: black;
+
+  /* color: #a2ccb6 ; */
+  background: linear-gradient(to right,#a2ccb6 0%,#fceeb5 100%,#ee786e 0%);
+  animation: blink .55s step-end infinite alternate;
+}

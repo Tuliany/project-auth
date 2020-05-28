@@ -39,11 +39,11 @@ export const user = createSlice({
       console.log(`Error Message: ${errorMessage}`)
       state.login.errorMessage = errorMessage;
     },
-    logout: ( state, action ) => {
-      console.log("Logging out")
-      state.login.userId = 0
-      state.login.accessToken = null
-    }
+    // logout: ( state, action ) => {
+    //   console.log("Logging out")
+    //   state.login.userId = 0
+    //   state.login.accessToken = null
+    // }
   }
 })
 
@@ -72,7 +72,7 @@ export const log = (name, password) => {
        dispatch(user.actions.setUserId({ userId: json.userId}))
      })
      .catch((err) => {
-       dispatch(user.actions.logout())
+      //  dispatch(user.actions.logout())
        dispatch(user.actions.setErrorMessage({ errorMessage: err }))
      })
   }
@@ -104,11 +104,11 @@ export const getSecretMessage = () => {
   }
 }
 
-// export const logout = () => {
-//   return (dispatch) => {
-//     dispatch(user.actions.setSecretMessage({ secretMessage: null }))
-//     dispatch(user.actions.setErrorMessage({ errorMessage: null }))
-//     dispatch(user.actions.setAccessToken({ accessToken: null }))
-//     dispatch(user.actions.setUserId({ userId: 0 }))
-//   }
-// }
+export const logout = () => {
+  return (dispatch) => {
+    dispatch(user.actions.setSecretMessage({ secretMessage: null }))
+    dispatch(user.actions.setErrorMessage({ errorMessage: null }))
+    dispatch(user.actions.setAccessToken({ accessToken: null }))
+    dispatch(user.actions.setUserId({ userId: 0 }))
+  }
+}

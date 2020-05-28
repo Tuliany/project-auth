@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { user, log } from '../reducers/user'
@@ -10,6 +10,8 @@ export const Signup = () => {
   const history = useHistory ()
   const dispatch = useDispatch()
   const accessToken = useSelector((store) => store.user.login.accessToken)
+  const errorMessage = useSelector((store) => store.user.login.errorMessage)
+
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')  
   const [password, setPassword] = useState('')
@@ -27,7 +29,7 @@ export const Signup = () => {
     })
     .then((res) => {
       if (!res.ok) {
-        throw 'Congratz you are already a member'
+        throw 'Congratz! You are already a member 🚨'
       }
       return res.json()
     })
@@ -44,6 +46,11 @@ export const Signup = () => {
     // .then((json) => console.log(json))
     // .catch((err) => console.log("error:", err));
   }
+  useEffect (() => {
+    if (accessToken) {
+      // history.push('/secrets')
+    }
+  })
   
   return (
     <div>
@@ -70,6 +77,8 @@ export const Signup = () => {
     </button>
     <button type ="Home" onClick={() => history.push('/')}> Home </button> 
   </form>
+  <h2>{errorMessage && <p> {`${errorMessage}`}</p>}</h2>
+
   </div>
   )
 }

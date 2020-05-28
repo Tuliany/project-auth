@@ -16,7 +16,9 @@ export const Login = () => {
    const handleLogin = (event) => {
      event.preventDefault()
      dispatch(log(name, password))
+    //  history.push('/secrets')
   }
+
 useEffect (() => {
   if (accessToken) {
     history.push('/secrets')
@@ -39,13 +41,13 @@ useEffect (() => {
           </button>
           <button type ="Home" onClick={() => history.push('/')}> Home </button>  
       </form>
-      <h7>{errorMessage && <h4>Error Message : {`${errorMessage}`}</h4>}</h7>
+      <h2>{errorMessage && <p>Error Message : {`${errorMessage}`}</p>}</h2>
 
     </div>
   
   )
 } else {
-  // If user is logged in, show profile
+  //
   return (null)
 }
 }
