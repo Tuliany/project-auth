@@ -19,11 +19,11 @@ export const Login = () => {
     // history.push('/secrets')
   }  
 
-//   useEffect (() => {
-//   if (accessToken) {
-//     history.push('/secrets')
-//   } 
-// })
+  useEffect (() => {
+  if (accessToken) {
+    history.push('/secrets')
+  } 
+})
 
   useEffect(() => {
     dispatch(user.actions.setErrorMessage({ errorMessage: null }))

@@ -1,13 +1,17 @@
 # Project Auth
 
-Replace this readme with your own information about your project.
+This was a project supposed to be a pair-programing. I did it by myself. 
+The project needed to have two parts; a backend API, and a React frontend. I needed to create a `User` model using mongoose, with properties for registered user, and to store a user's access token.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Then, on the frontend side of things, it was needed to build up a registration form which POSTs to the API. And needed to store the access token that gets back in the browser using local storage, and then use that token when making other requests to the API.
+
+Once a user is logged in, it needed to have at least one endpoint which returns some content which only logged-in users should be able to access.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I came accross many problems with this. And Im proud that I've manage to solve most of them. But i still have one problem and that is with the "submit-login" button. It's not pushing to the secrets site. And if I place the history.push  under the "handleLogin" function, then it will redirect nomatter if the password is correct or not. I would really need some help with that. 
+And some help to launch it on heroku. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+I have not been able to launch it live yet. 

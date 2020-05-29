@@ -30,13 +30,6 @@ const User = mongoose.model('User', {
   }
 })
 
-// const user = new User({name: "Bob", password: bcrypt.hashSync("testing")})
-// user.save()
-
-// Defines the port the app will run on. Defaults to 8080, but can be 
-// overridden when starting the server. For example:
-//
-//   PORT=9000 npm start
 const port = process.env.PORT || 8080
 const app = express()
 
@@ -98,5 +91,3 @@ app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`)
 })
 
-//console.log(crypto.randomBytes(1).toString('hex'))
-//console.log(bcrypt.hashSync('testing'))
