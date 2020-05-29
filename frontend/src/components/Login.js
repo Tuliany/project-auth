@@ -29,7 +29,7 @@ useEffect (() => {
  if (!accessToken) {
   return (
     <div>
-      <form className="Login">
+      <form className="login">
         <h2>LOG IN</h2>
           
             <input type="text" placeholder="Name"required 
@@ -41,7 +41,7 @@ useEffect (() => {
           </button>
           <button type ="Home" onClick={() => history.push('/')}> Home </button>  
       </form>
-      <h2>{errorMessage && <p>Error Message : {`${errorMessage}`}</p>}</h2>
+      <h3>{errorMessage && <p> {`${errorMessage} `}</p>}</h3>
 
     </div>
   

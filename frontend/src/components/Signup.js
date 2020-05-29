@@ -77,7 +77,7 @@ export const Signup = () => {
     </button>
     <button type ="Home" onClick={() => history.push('/')}> Home </button> 
   </form>
-  <h2>{errorMessage && <p> {`${errorMessage}`}</p>}</h2>
+  <h3>{errorMessage && <p> {`${errorMessage}`}</p>}</h3>
 
   </div>
   )

@@ -13,6 +13,7 @@ font-family: 'Sacramento', cursive;
 font-weight:bold; 
  font-size: 60px;
  color: white;
+ /* text-align: center; */
  position: relative;
  animation: mymove 5s infinite;
  margin: 40px;
@@ -40,6 +41,7 @@ font-weight:bold;
  }
 button{
   -webkit-appearance: none; 
+  /* background: -webkit-gradient(to right,#a2ccb6 0%,#fceeb5 50%,#ee786e 100%); */
   background: linear-gradient(to right,#a2ccb6 0%,#fceeb5 50%,#ee786e 100%);
   background-size: 500%;
   border: none;
@@ -62,7 +64,10 @@ button{
   margin: 5px;
 }   
 button:hover {
+  /* animation-name: gradient;
+  -webkit-animation-name: gradient; */
   animation-duration: 2s;
+  /* -webkit-animation-duration: s; */
   animation-iteration-count: 1;
   -webkit-animation-iteration-count: 1;
   animation-fill-mode: forwards;
