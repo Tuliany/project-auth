@@ -10,8 +10,8 @@ Once a user is logged in, it needed to have at least one endpoint which returns 
 ## The problem
 
 I came accross many problems with this. And Im proud that I've manage to solve most of them. But i still have one problem and that is with the "submit-login" button. It's not pushing to the secrets site. And if I place the history.push  under the "handleLogin" function, then it will redirect nomatter if the password is correct or not. I would really need some help with that. 
-And some help to launch it on heroku. 
+
 
 ## View it live
 
-I have not been able to launch it live yet. 
+https://auth-api-by-tuliany.netlify.app/
