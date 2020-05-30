@@ -29,7 +29,7 @@ export const Login = () => {
     dispatch(user.actions.setErrorMessage({ errorMessage: null }))
   }, [dispatch])
 
-//  if (!accessToken) {
+ if (!accessToken) {
   return (
     <div>
       <form className="login">
@@ -51,10 +51,10 @@ export const Login = () => {
     </div>
   )
 } 
-// else {
-//   //
-//   return <null/>
-// }
-// }
+else {
+  //
+  return <null/>
+}
+}
 
-// export default Login
+export default Login
