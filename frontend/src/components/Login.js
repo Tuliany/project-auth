@@ -7,7 +7,7 @@ import '../Style/Login.css'
 export const Login = () => {
    const history = useHistory()
    const dispatch = useDispatch()
-   const accessToken = useSelector((store) => store.user.login.acessToken)
+   const accessToken = useSelector((store) => store.user.login.accessToken)
    const errorMessage = useSelector((store) => store.user.login.errorMessage)
 
    const [name, setName] = useState('')
@@ -23,7 +23,7 @@ export const Login = () => {
   if (accessToken) {
     history.push('/secrets')
   } 
-})
+},[accessToken])
 
   useEffect(() => {
     dispatch(user.actions.setErrorMessage({ errorMessage: null }))
